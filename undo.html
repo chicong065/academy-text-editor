@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Awesome Editor 🔥</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Awesome Editor 🔥</h1>
+      <textarea oninput="autoSave()" id="editor" rows="20" cols="100" style="resize: none;" autofocus></textarea>
+      <div class="tools">
+        <!-- <div class="stack" id="undo"><p></p></div> -->
+        <div class="actions">
+          <button onclick="undo()">UNDO</button>
+          <button onclick="redo()">REDO</button>
+          <br />
+          <button onclick="print()">PRINT</button>
+          <button onclick="clearAll()">CLEAR</button>
+        </div>
+        <!-- <div class="stack" id="redo"></div> -->
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="./undo.js"></script>
+</html>

@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tools {
+  display: flex;
+  flex-direction: row;
+}
+
+.actions {
+  display: flex;
+  margin: 0 30px;
+  flex-direction: column
+}
+
+.stack {
+  border: 2px dashed cornflowerblue;
+  border-top: none;
+  padding: 10px;
+  width: 120px;
+  height: 150px;
+  overflow: auto;
+}
+
+.stack > p {
+  color: cornflowerblue;
+  border: 1px solid crimson;
+  margin: 1px 0;
+  overflow-wrap: break-word;
+  min-height: 20px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  margin-bottom: 20px;
+}
+
+@media print {
+  .tools {
+    display: none;
+  }
+}
