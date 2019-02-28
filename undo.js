@@ -1,27 +1,53 @@
 let undoStack = [''];
 let redoStack = [];
 
+const undoDiv = document.getElementById('undo');
+const redoDiv = document.getElementById('redo');
+
 function autoSave() {
   const text = document.getElementById('editor').value;
 
   // Save every 5 characters
   if (text.length % 5 === 0) {
-    console.log('SAVING');
-    // Your save code goes here
+    undoStack.push(text);
+    undoDiv.innerHTML = `<p>${text}</p>` + undoDiv.innerHTML;
   }
 }
 
 function clearAll() {
-  console.log('CLEAR');
-  // Your clear code goes here
+  redoStack = [];
+  undoStack = [''];
+  document.getElementById('editor').value = '';
+
+  undoDiv.innerHTML = '<p></p>'
+  redoDiv.innerHTML = '';
 }
 
 function redo() {
-  console.log('REDO');
-  // Your redo code goes here
+  if (redoStack.length > 0) {
+    const editor = document.getElementById('editor');
+
+    const lastState = redoStack.pop();
+    redoDiv.removeChild(redoDiv.firstChild);
+
+    undoStack.push(editor.value);
+    undoDiv.innerHTML = `<p>${editor.value}</p>` + undoDiv.innerHTML;
+
+    editor.value = lastState;
+  }
 }
 
 function undo() {
-  console.log('UNDO');
-  // Your undo code goes here
+  if (undoStack.length > 0) {
+    debugger;
+    const editor = document.getElementById('editor');
+
+    const lastState = undoStack.pop();
+    undoDiv.removeChild(undoDiv.firstChild);
+
+    redoStack.push(editor.value);
+    redoDiv.innerHTML = `<p>${editor.value}</p>` + redoDiv.innerHTML;
+
+    editor.value = lastState;
+  }
 }
