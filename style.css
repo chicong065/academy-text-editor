@@ -22,6 +22,10 @@
   width: 120px;
   height: 150px;
   overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .stack > p {
