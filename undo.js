@@ -6,7 +6,7 @@ const undoDiv = document.getElementById('undo');
 const redoDiv = document.getElementById('redo');
 
 function autoSave() {
-  const text = document.getElementById('editor').value;
+  const text = editor.value;
 
   // Save every 5 characters
   if (text.length % 5 === 0) {
@@ -18,7 +18,7 @@ function autoSave() {
 function clearAll() {
   redoStack = [];
   undoStack = [''];
-  document.getElementById('editor').value = '';
+  editor.value = '';
 
   undoDiv.innerHTML = '<p></p>'
   redoDiv.innerHTML = '';
