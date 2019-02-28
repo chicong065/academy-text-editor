@@ -1,6 +1,7 @@
 let undoStack = [''];
 let redoStack = [];
 
+const editor = document.getElementById('editor');
 const undoDiv = document.getElementById('undo');
 const redoDiv = document.getElementById('redo');
 
@@ -24,9 +25,7 @@ function clearAll() {
 }
 
 function redo() {
-  if (redoStack.length > 0) {
-    const editor = document.getElementById('editor');
-
+  if (redoStack.length) {
     const lastState = redoStack.pop();
     redoDiv.removeChild(redoDiv.firstChild);
 
@@ -38,10 +37,7 @@ function redo() {
 }
 
 function undo() {
-  if (undoStack.length > 0) {
-    debugger;
-    const editor = document.getElementById('editor');
-
+  if (undoStack.length) {
     const lastState = undoStack.pop();
     undoDiv.removeChild(undoDiv.firstChild);
 
