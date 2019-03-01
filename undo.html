@@ -20,5 +20,14 @@
       </div>
     </div>
   </body>
+  <script type="text/javascript">
+    document.body.addEventListener("keydown", (e) => {
+      var zKey = 90;
+      if ((e.ctrlKey || e.metaKey) && e.keyCode == zKey) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  </script>
   <script type="text/javascript" src="./undo.js"></script>
 </html>

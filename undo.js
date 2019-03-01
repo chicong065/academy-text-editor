@@ -1,14 +1,13 @@
 let undoStack = [''];
 let redoStack = [];
+const editor = document.getElementById('editor');
 
 function autoSave() {
-  const text = document.getElementById('editor').value;
+  const text = editor.value;
 
   // Save every 5 characters
-  if (text.length % 5 === 0) {
-    console.log('SAVING');
-    // Your save code goes here
-  }
+  console.log('SAVING', text);
+  // Your save code goes here
 }
 
 function clearAll() {
