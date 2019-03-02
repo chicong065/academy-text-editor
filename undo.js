@@ -2,6 +2,15 @@ let undoStack = [''];
 let redoStack = [];
 const editor = document.getElementById('editor');
 
+// You can access the textarea value by
+// editor.value
+// and set the textarea value by
+// editor.value = 'Lorem ipsum'
+
+// Stack operation in js are
+// stack.push(data)
+// stack.pop()
+
 function autoSave() {
   const text = editor.value;
 
